@@ -1,7 +1,7 @@
 ## Understanding the Attack
 - `create` address = hash(sender, nonce)
 - `create2` address = hash(0xFF, sender, salt, bytecode)
-- Contract addresses created with `create` and `create2` can be pre-computed, just differently.
+- The addresses of contracts created with the `create` and `create2` methodology can be pre-computed.
 
 0. A person from TornadoCash deploys their `TornadoCashDAO` contract. Responsible for approving and executing proposals. 
 1. Attacker deploys contract `DeployerUsingCreate2`. A contract that will deploy another contact called `DeployerUsingCreate` using `create2`. The address of `DeployerUsingCreate` will always be fixed at `0xXYZ` because `create2` is based on the bytecode of the contract being deployed.
